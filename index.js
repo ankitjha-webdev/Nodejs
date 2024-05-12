@@ -1,12 +1,11 @@
-console.log("Hello World Ankit");
+const express = require('express);
+                        
+const app = express();
 
-// Call fake api call
-const axios = require("axios");
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-function callApi() {
-  axios
-    .get("https://jsonplaceholder.typicode.com/todos/1")
-    .then((res) => console.log(res.data));
-}
-
-callApi();
+app.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
+})
